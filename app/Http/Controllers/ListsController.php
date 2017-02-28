@@ -153,6 +153,8 @@ class ListsController extends Controller {
                 throw new \Exception();
             }
 
+            unset($data->_links);
+
             return Response::create([
                 'status' => 'API-' . $res->getStatusCode(),
                 'path' => '/lists/' . $id,
